@@ -1,0 +1,16 @@
+{
+  "name": "server-files",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@ragempcommunity/types-client": "^2.1.8",
+    "@ragempcommunity/types-server": "^2.1.8"
+  }
+}

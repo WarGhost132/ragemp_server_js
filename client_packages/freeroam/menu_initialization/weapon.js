@@ -1,7 +1,7 @@
 /* eslint no-useless-escape: 0 */
 
 // Adding weapon in the weapon window.
-exports = function(browser, weapon) {
+const weaponInit = function(browser, weapon) {
     Object.keys(weapon).forEach(key => {
         let weapons = '';
         let keyFormated = key.toLowerCase().replace(/\s/g, '_');
@@ -23,3 +23,7 @@ exports = function(browser, weapon) {
         browser.execute(`$('#weapon_window .window_body').append('${queryFormated}')`);
     });
 };
+
+exports = {
+    weaponInit,
+}

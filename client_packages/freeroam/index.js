@@ -1,14 +1,20 @@
+const { vehiclesConfig } = require('./freeroam/configs/vehicles.js');
+const { skinsConfig } = require('./freeroam/configs/skins.js');
+const { weaponConfig } = require('./freeroam/configs/weapon.js');
+
+const { vehiclesInit } = require('./freeroam/menu_initialization/vehicles.js');
+const { skinsInit } = require('./freeroam/menu_initialization/skins.js');
+const { weaponInit } = require('./freeroam/menu_initialization/weapon.js');
+const { playersInit } = require('./freeroam/menu_initialization/players.js');
+
+const { events } = require('./freeroam/events.js');
+
 // CEF browser.
 let menu;
 // Configs.
-let vehicles     = JSON.parse(require('./freeroam/configs/vehicles.js'));
-let skins        = JSON.parse(require('./freeroam/configs/skins.js')).Skins;
-let weapon       = JSON.parse(require('./freeroam/configs/weapon.js'));
-// Initialization functions.
-let vehiclesInit = require('./freeroam/menu_initialization/vehicles.js');
-let skinsinit    = require('./freeroam/menu_initialization/skins.js');
-let weaponInit   = require('./freeroam/menu_initialization/weapon.js');
-let playersInit  = require('./freeroam/menu_initialization/players.js');
+let vehicles = JSON.parse(vehiclesConfig);
+let skins = JSON.parse(skinsConfig).Skins;
+let weapon = JSON.parse(weaponConfig);
 
 // Creating browser.
 mp.events.add('guiReady', () => {
@@ -17,12 +23,12 @@ mp.events.add('guiReady', () => {
         menu = mp.browsers.new('package://freeroam/browser/index.html');
         // Init menus and events, when browser ready.
         mp.events.add('browserDomReady', (browser) => {
-            if (browser == menu) {
+            if (browser === menu) {
                 // Init events.
-                require('freeroam/events.js')(menu);
+                events(menu);
                 // Init menus.
                 vehiclesInit(menu, vehicles);
-                skinsinit(menu, skins);
+                skinsInit(menu, skins);
                 weaponInit(menu, weapon);
                 playersInit(menu);
 

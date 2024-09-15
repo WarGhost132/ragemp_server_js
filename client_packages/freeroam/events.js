@@ -1,4 +1,4 @@
-exports = function(menu) {
+const events = function(menu) {
     // Add player in the table.
     mp.events.add('playerJoinedServer', (id, name) => {
         menu.execute(`addPlayerInTheTable('${id}', '${name}');`);
@@ -66,3 +66,7 @@ exports = function(menu) {
         }
     });
 };
+
+exports = {
+    events,
+}

@@ -1,7 +1,7 @@
 /* eslint no-useless-escape: 0 */
 
 // Adding vehicles in the vehicles window.
-exports = function(browser, vehicles) {
+const vehiclesInit = function(browser, vehicles) {
     Object.keys(vehicles).forEach((key) => {
         // Adding all cars.
         let cars = '';
@@ -24,3 +24,7 @@ exports = function(browser, vehicles) {
         browser.execute(`$('#vehicles_window .window_body').append('${queryFormated}')`);
     });
 };
+
+exports = {
+    vehiclesInit,
+}

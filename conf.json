@@ -1,8 +1,8 @@
 {
 	"announce": false,
-	"bind": "127.0.0.1",
+	"bind": "81.30.105.188",
 	"gamemode": "freeroam",
-	"name": "RAGE:MP Unofficial server [Tag]",
+	"name": "RAGE:MP SBP",
 	"maxplayers": 100,
 	"port": 22005,
 	"stream-distance": 500.0

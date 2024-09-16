@@ -1,5 +1,5 @@
 {
-	"announce": false,
+	"announce": true,
 	"bind": "81.30.105.188",
 	"gamemode": "freeroam",
 	"name": "RAGE:MP SBP",
